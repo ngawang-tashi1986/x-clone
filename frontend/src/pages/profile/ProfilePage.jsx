@@ -23,6 +23,7 @@ const ProfilePage = () => {
 	const isLoading = false;
 	const isMyProfile = true;
 
+	
 	const user = {
 		_id: "1",
 		fullName: "John Doe",
@@ -35,6 +36,7 @@ const ProfilePage = () => {
 		followers: ["1", "2", "3"],
 	};
 
+	
 	const handleImgChange = (e, state) => {
 		const file = e.target.files[0];
 		if (file) {
