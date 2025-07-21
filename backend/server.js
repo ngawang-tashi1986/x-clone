@@ -23,6 +23,10 @@ app.use(express.json()); //creating middleware (ie. to parse request.body - ie t
 app.use(express.urlencoded({ extended: true })); //to parse urlencoded data via form data
 app.use(cookieParser()); //to parse cookies from the request
 
+app.use(express.json({ limit: "5mb" })); // to parse req.body
+// limit shouldn't be too high to prevent DOS
+app.use(express.urlencoded({ extended: true })); // to parse form data(urlencoded)
+
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes); // Uncomment this line if you have post routes
